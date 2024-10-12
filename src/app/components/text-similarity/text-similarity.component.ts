@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { TextSimilarityService } from '../../services/text-similarity.service';
-import { HttpClientModule } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-text-similarity',

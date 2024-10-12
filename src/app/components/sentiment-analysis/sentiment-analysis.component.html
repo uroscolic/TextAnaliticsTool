@@ -1,1 +1,28 @@
-<p>sentiment-analysis works!</p>
+<div>
+    <h3>Sentiment analysis page</h3>
+
+    <div>
+        <form (submit)="analyzeSentiment()" class="mb-5">
+            <div class="form-group mb-2">
+                <label for="name">Enter text</label>
+                <input type="text" class="form-control" id="text" name="text" placeholder="text" [(ngModel)]="text">
+                <select name="lang" class="form-select" aria-label="Default select example" [(ngModel)]="lang">
+                    <option value="auto">Auto</option>
+                    <option value="en">English</option>
+                    <option value="it">Italian</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <div>
+                <div >
+                    <h4 [style.color]="getInterpolatedColor(score)">
+                        Sentiment Type: {{ type }}
+                    </h4>
+                    <h4>Score: <b>{{ score }} </b></h4>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

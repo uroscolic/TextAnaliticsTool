@@ -1,1 +1,40 @@
-<p>entity-extraction works!</p>
+<div>
+    <h3>Entity extraction page</h3>
+
+    <div>
+        <form (submit)="extractEntities()" class="mb-5">
+            <div class="form-group mb-2">
+                <label for="name">Enter text</label>
+                <input type="text" class="form-control" id="text" name="text" placeholder="text" [(ngModel)]="text">
+                <input type="checkbox" name="image" [(ngModel)]="imageChecked"> Image <br>
+                <input type="checkbox" name="abstract" [(ngModel)]="abstractChecked"> Abstract <br>
+                <input type="checkbox" name="categories" [(ngModel)]="categoriesChecked"> Categories <br>
+                Min Confidence: {{minConfidence}} <br>
+                0 <input type="range" min="0" max="1" step="0.01" name="slider" [(ngModel)]="minConfidence"> 1
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <ng-container *ngIf="entities">
+                <div class="mt-5">
+                    <h4>Entities</h4>
+                    <ul>
+                        <li *ngFor="let entity of entities">
+                            <ng-container *ngIf="abstractChecked">
+                                <b>Abstract:</b> {{entity.abstract}} <br>
+                            </ng-container>
+                            <ng-container *ngIf="categoriesChecked">
+                                <b>Categories:</b> {{entity.categories}} <br>
+                            </ng-container>
+                            <ng-container *ngIf="imageChecked">
+                                <img *ngIf="entity.image" [src]="entity.image" style="max-width: 100px; max-height: 100px;"/><br>
+                            </ng-container>
+                        </li>
+                    </ul>
+                </div>
+            </ng-container>
+
+
+        </form>
+    </div>
+</div>

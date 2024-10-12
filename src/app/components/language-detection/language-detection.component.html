@@ -1,0 +1,23 @@
+<div>
+    <h3>Language detection page</h3>
+  
+    <div>
+      <form (submit)="detectLanguage()" class="mb-5">
+        <div class="form-group mb-2">
+          <label for="name">Enter text</label>
+          <input type="text" class="form-control" id="text" name="text" placeholder="text" [(ngModel)]="text">
+          <input type="checkbox" name="clean" [(ngModel)]="clean"> Clean
+        </div>
+  
+        <button type="submit" class="btn btn-primary">Submit</button>
+
+        <h4>Detected languages:</h4>
+        <ng-container *ngFor="let detectedLanguage of detectedLanguages">
+          <div class="mt-3">
+            <p> Language: <b>{{ detectedLanguage.lang }} </b> with configence level of: <b>{{ detectedLanguage.confidence }} </b></p>
+          </div>
+
+        </ng-container>
+      </form>
+    </div>
+  </div>

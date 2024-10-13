@@ -42,7 +42,7 @@ export class EntityExtractionComponent {
         this.entities.push({
           abstract: annotation.abstract,
           categories: annotation.categories,
-          image: annotation.image.full
+          image: annotation.image?.full
         });
       }
     });

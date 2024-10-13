@@ -27,11 +27,8 @@ export class SentimentAnalysisComponent {
 
   analyzeSentiment() {
     this.sentimentAnalysisService.analyzeSentiment(this.text, this.lang).subscribe((res) => {
-      console.log(`Text: ${this.text}, Lang: ${this.lang}`);
       this.type = res.sentiment.type;
       this.score = res.sentiment.score;
-      console.log(`Type: ${this.type}, Score: ${this.score}`);
-
     });
   }
 

@@ -28,7 +28,6 @@ export class TextSimilarityComponent {
     this.textSimilarityService.checkSimilarity(this.text1, this.text2)
       .subscribe((result: any) => {
         this.similarity = result.similarity;
-        console.log(`Similarity: ${this.similarity}`);
       });
   }
 }

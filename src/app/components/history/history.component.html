@@ -1,0 +1,7 @@
+<div>
+    <h1>History</h1>
+    <div *ngFor="let history1 of history">
+        <p> [{{history1.timestamp | date:'dd.MM.yyyy. HH:mm:SS' }}] {{history1.method | uppercase }} {{history1.path}}?{{history1.parms}} </p>
+    </div>
+
+</div>

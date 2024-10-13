@@ -29,7 +29,6 @@ export class LanguageDetectionComponent {
   detectLanguage() {
     this.languageDetectionService.detectLanguage(this.text, this.clean).subscribe((res) => {
       this.detectedLanguages = res.detectedLangs;
-      console.log('res: ', res);
       console.log(this.detectedLanguages);
     })
   }

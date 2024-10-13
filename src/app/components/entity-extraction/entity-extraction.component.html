@@ -16,7 +16,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
 
             <ng-container *ngIf="entities">
-                <div class="mt-5">
+                <div class="mt-5" *ngIf="abstractChecked || categoriesChecked || imageChecked">
                     <h4>Entities</h4>
                     <ul>
                         <li *ngFor="let entity of entities">
@@ -27,7 +27,7 @@
                                 <b>Categories:</b> {{entity.categories}} <br>
                             </ng-container>
                             <ng-container *ngIf="imageChecked">
-                                <img *ngIf="entity.image" [src]="entity.image" style="max-width: 100px; max-height: 100px;"/><br>
+                                <img *ngIf="entity.image" [src]="entity.image" style="max-width: 100px; max-height: 100px;"/> <br>
                             </ng-container>
                         </li>
                     </ul>

@@ -14,7 +14,6 @@ export class TextSimilarityService {
   constructor(private httpClient: HttpClient, private historyService: HistoryService) { }
 
   checkSimilarity(text1: string, text2: string): Observable<any> {
-    console.log(`TextSimilaritySerivce`);
     const token = localStorage.getItem('token') || '';
     
     const params = new HttpParams().set('text1', text1).set('text2', text2).set('token', token);
